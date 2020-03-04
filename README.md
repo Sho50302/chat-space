@@ -6,7 +6,6 @@
 |name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|group_id|inter|null: false, foreign_key: true|
 ### Association
 - has_many :messages
 - has_many :groups, through: :groups_users
@@ -16,7 +15,6 @@
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :messages
 - has_many :users, through: :group_users
@@ -25,7 +23,8 @@
 ## messagesテーブル
 |Column|Type|Option|
 |------|----|------|
-|body|text|null: false|
+|body|text||
+|image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
