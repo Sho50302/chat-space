@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.side {
+  background-color: #253141;
+  width: 300px;
+  height: 100%;
+  &__head {
+    height: 100px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    &__items {
+      width: 100%;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        color: $white;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+      }
+      &__icon {
+        font-size: 14px;
+        list-style: none;
+        display: flex;
+        &__edit {
+          color: $white;
+          text-decoration: none;
+        }
+        &__cog {
+          color: $white;
+          margin-left: 5px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .side__body {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 20px 20px 0 20px;
+    &__group {
+      width: 100%;
+      &__name {
+        color: $white;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &__message {
+        color: $white;
+        font-size: 11px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.main {
+  background-color: $white;
+  width: calc(100vw - 300px);
+  height: 100%;
+  &__head {
+    height: 100px;
+    border-bottom: 1px solid #eee;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    &__left {
+      padding-top: 35px;
+      &__text {
+        color: #333;
+        font-size: 20px;
+      }
+      &__lists {
+        color: $gray;
+        font-size: 12px;
+        margin-top: 15px;
+        display: flex;
+      }
+    }
+    &__right {
+      height: 40px;
+      font-size: 16px;
+      padding: 0 20px;
+      margin-top: 30px;
+      border: 1px solid $light_blue;
+      line-height: 40px;
+      text-align: center;
+      &__btn {
+        text-decoration: none;
+        color: $light_blue;
+      }
+    }
+  }
+  &__body {
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+    padding: 35px 45px;
+    &__text {
+      margin-bottom: 12px;
+      display: flex;
+      &__name {
+        color: #333;
+        font-size: 16px;
+        text-align: center;
+      }
+      &__update {
+        color: $gray;
+        font-size: 12px;
+        padding: 0 10px;
+      }
+    }
+    &__message {
+      color: #434A54;
+      font-size: 14px;
+    }
+    &__text2 {
+      margin-top: 46px;
+      margin-bottom: 12px;
+      display: flex;
+      &__name2 {
+        color: #333;
+        font-size: 16px;
+        text-align: center;
+      }
+      &__update2 {
+        color: $gray;
+        font-size: 12px;
+        padding: 0 10px;
+      }
+    }
+    &__message2 {
+      color: #434A54;
+      font-size: 14px;
+    }
+  }
+  &__foot {
+    background-color: #d2d2d2;
+    height: 90px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    &__input {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &__text {
+        background-color: $white;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        input {
+          width: 100%;
+          border: none;
+          line-height: 50px;
+          padding: 0 40px 0 10px;
+        }
+        &__left {
+          width: 100%;
+          display: flex;
+          align-items: center;
+        }
+        &__right {
+          line-height: 50px;
+          font-size: 25px;
+          position: absolute;
+          right: 10px;
+          cursor: pointer;
+          input {
+            display: none;
+          }
+        }
+      }
+      &__btn {
+        background-color: $light_blue;
+        width: 100px;
+        margin-left: 15px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        &__send {
+          color: $white;
+        }
+      }
+    }
+  }
+}
