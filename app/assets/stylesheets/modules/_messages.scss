@@ -86,6 +86,9 @@
         font-size: 12px;
         margin-top: 15px;
         display: flex;
+        &__members {
+          margin-left: 5px;
+        }
       }
     }
     &__right {
@@ -124,25 +127,6 @@
       color: #434A54;
       font-size: 14px;
     }
-    &__text2 {
-      margin-top: 46px;
-      margin-bottom: 12px;
-      display: flex;
-      &__name2 {
-        color: #333;
-        font-size: 16px;
-        text-align: center;
-      }
-      &__update2 {
-        color: $gray;
-        font-size: 12px;
-        padding: 0 10px;
-      }
-    }
-    &__message2 {
-      color: #434A54;
-      font-size: 14px;
-    }
   }
   &__foot {
     background-color: #d2d2d2;
@@ -152,44 +136,33 @@
     align-items: center;
     &__input {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      &__text {
-        background-color: $white;
-        width: 100%;
+      .new_message {
         display: flex;
-        justify-content: space-between;
         position: relative;
-        input {
-          width: 100%;
-          border: none;
-          line-height: 50px;
-          padding: 0 40px 0 10px;
-        }
         &__left {
           width: 100%;
+          padding: 0 40px 0 10px;
           display: flex;
           align-items: center;
-        }
+          }
         &__right {
           line-height: 50px;
           font-size: 25px;
-          position: absolute;
           right: 10px;
           cursor: pointer;
+          position: absolute;
+          right: 110px;
           input {
             display: none;
+            }
           }
-        }
-      }
-      &__btn {
-        background-color: $light_blue;
-        width: 100px;
-        margin-left: 15px;
-        line-height: 50px;
-        text-align: center;
-        cursor: pointer;
-        &__send {
+        &__btn {
+          background-color: $light_blue;
+          width: 100px;
+          margin-left: 15px;
+          line-height: 50px;
+          text-align: center;
+          cursor: pointer;
           color: $white;
         }
       }
