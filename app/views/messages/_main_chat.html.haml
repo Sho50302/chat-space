@@ -2,38 +2,23 @@
   .main__head
     .main__head__left
       .main__head__left__text
-        %h2 test
+        = @group.name
         %ul.main__head__left__lists
-          %li.main__head__left__list
-            Member：
           %li
-            masa
+            Member：
+          - @group.users.each do |user|
+            .main__head__left__lists__members
+              %li= user.name 
     .main__head__right
-      = link_to edit_group_path, class: "main__head__right__btn" do
+      = link_to edit_group_path(@group), class: "main__head__right__btn" do
         Edit
   .main__body
-    .main__body__text
-      .main__body__text__name
-        %p masa
-      .main__body__text__update
-        %p 2020/3/6(Fri) 12:50:20
-    .main__body__message
-      %p おはよう！
-    .main__body__text2
-      .main__body__text__name2
-        %p masa
-      .main__body__text__update2
-        %p 2020/3/6(Fri) 13:00:05
-    .main__body__message2
-      %p 今日は夜から雨
+    = render @messages
   .main__foot
     .main__foot__input
-      .main__foot__input__text
-        .main__foot__input__text__left
-          %input{type: "text", placeholder: "type a message", size: "80"}
-        %label.main__foot__input__text__right
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'new_message__left', placeholder: 'type a message'
+        = f.label :image, class: 'new_message__right' do
           %i.far.fa-image
-          %input{type: "file"}
-      .main__foot__input__btn
-        .main__foot__input__btn__send
-          Send
+          = f.file_field :image
+        = f.submit 'Send', class: 'new_message__btn'
