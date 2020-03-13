@@ -51,12 +51,14 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .always(function(){
+      $('.new_message__btn').prop('disabled', false);
+    })
     .done(function(data){
       var html = buildHTML(data);
       $('.main__body').append(html);
       $('.main__body').animate({ scrollTop: $('.main__body')[0].scrollHeight});
       $('.new_message')[0].reset();
-      $('.new_message__btn').prop('disabled', false);
      })
      .fail(function() {
           alert("メッセージ送信に失敗しました");
