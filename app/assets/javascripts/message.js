@@ -59,7 +59,7 @@ $(function(){
       $('.main__body').append(html);
       $('.main__body').animate({ scrollTop: $('.main__body')[0].scrollHeight});
       $('.new_message')[0].reset();
-     })
+    })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
     });
