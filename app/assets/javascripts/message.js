@@ -1,5 +1,5 @@
 $(function(){
-  function buildHTML(message){
+  function buildHTML(message) {
     if ( message.image ) {
       var html =
           `<div class="main__body__text">
@@ -39,7 +39,7 @@ $(function(){
       return html;
     };
   }
-  $("#new_message").on("submit", function(e){
+  $("#new_message").on("submit", function(e) {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action");
@@ -51,16 +51,16 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .always(function(){
+    .always(function() {
       $('.new_message__btn').prop('disabled', false);
     })
-    .done(function(data){
+    .done(function(data) {
       var html = buildHTML(data);
       $('.main__body').append(html);
       $('.main__body').animate({ scrollTop: $('.main__body')[0].scrollHeight});
       $('.new_message')[0].reset();
     })
-    .fail(function(){
+    .fail(function() {
       alert("メッセージ送信に失敗しました");
     });
 })
